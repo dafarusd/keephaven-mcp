@@ -70,4 +70,10 @@ Then point the MCP server at `http://127.0.0.1:8790` with that token. The file i
 - It has **not** run on a Raspberry Pi yet, and it's not in a Keephaven release image. It's switched off in every shipped image until it passes on hardware.
 - Tokens travel in plain HTTP on your home network, like the rest of the box's local pages. Over Tailscale they're encrypted.
 
+
+
+## Agent skill
+
+`skill/keephaven/` is an agent skill (a `SKILL.md` plus a read-only `check.py`): how to use a Keephaven as memory, and how to boot one in a VM and report what works. `check.py` was run against the Photos SSD image booted in QEMU: setup page, then ready, Photos up, Immich 3.0.3.
+
 Built by [@Dafarusd](https://x.com/Dafarusd). MIT License.
