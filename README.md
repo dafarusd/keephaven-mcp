@@ -65,7 +65,7 @@ Then point the MCP server at `http://127.0.0.1:8790` with that token. The file i
 
 ## Status, honestly
 
-- The memory service is built and tested: 17 API tests, and a two-VM NixOS test where the service runs as its own locked-down user and a second machine uses it over the network.
+- The memory service is built and tested: 20 API tests, and a two-VM NixOS test where the service runs as its own locked-down user and a second machine uses it over the network.
 - This MCP server has 7 end-to-end tests: the official MCP client, this server over stdio, and the real memory service.
 - It has **not** run on a Raspberry Pi yet, and it's not in a Keephaven release image. It's switched off in every shipped image until it passes on hardware.
 - Tokens travel in plain HTTP on your home network, like the rest of the box's local pages. Over Tailscale they're encrypted.

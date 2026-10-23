@@ -28,7 +28,7 @@ function fail(e: unknown) {
   return { content: [{ type: "text" as const, text: `Keephaven: ${msg}` }], isError: true };
 }
 
-export function buildServer(mem: KeephavenMemory): McpServer {
+function buildServer(mem: KeephavenMemory): McpServer {
   const server = new McpServer({ name: "keephaven-memory", version: VERSION }, { instructions: INSTRUCTIONS });
 
   server.registerTool(
@@ -217,9 +217,9 @@ async function main() {
   await server.connect(new StdioServerTransport());
 }
 
-if (import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith("/keephaven-mcp")) {
-  main().catch((e) => {
-    process.stderr.write(`keephaven-mcp: ${e instanceof Error ? e.message : String(e)}\n`);
-    process.exit(1);
-  });
-}
+// Always run. A "was I started directly?" check breaks on Windows, where npm's shim passes a
+// backslash path that never matches import.meta.url, so the server would start and do nothing.
+main().catch((e) => {
+  process.stderr.write(`keephaven-mcp: ${e instanceof Error ? e.message : String(e)}\n`);
+  process.exit(1);
+});
