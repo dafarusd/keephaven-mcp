@@ -11,7 +11,7 @@ This skill does two things.
 
 ## 1. Use a Keephaven as your memory
 
-Only for a box that has agent memory switched on. As of 2026-10-23 that is the `agent-memory` branch: it is in no release image and hasn't run on a Pi yet. Check first:
+Only for a box that has agent memory switched on. As of 2026-10-23 that is the `agent-memory` branch: it is in no release image. It has run on one Pi 5 test box from a dev image; backup to a second box is untested. Check first:
 
     curl -s http://<box>:8790/v1/health
 
