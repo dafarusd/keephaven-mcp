@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.dafarusd/keephaven-mcp",
+  "description": "Agent memory on your own Keephaven home server: files, append-only journal, search.",
+  "repository": { "url": "https://github.com/dafarusd/keephaven-mcp", "source": "github" },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@dafarusd/keephaven-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "KEEPHAVEN_URL", "description": "The box's memory API, e.g. http://keephaven-xxxx.local:8790", "isRequired": true },
+        { "name": "KEEPHAVEN_TOKEN", "description": "Agent token from Settings > Agents on the box", "isRequired": true, "isSecret": true }
+      ]
+    }
+  ]
+}

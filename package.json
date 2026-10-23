@@ -1,0 +1,29 @@
+{
+  "name": "@dafarusd/keephaven-mcp",
+  "version": "0.1.0",
+  "description": "MCP server: give an AI agent a memory that lives on its human's Keephaven box.",
+  "mcpName": "io.github.dafarusd/keephaven-mcp",
+  "keywords": ["mcp", "model-context-protocol", "memory", "agent-memory", "keephaven", "self-hosted", "local-first"],
+  "license": "MIT",
+  "author": "Dafarus",
+  "repository": { "type": "git", "url": "https://github.com/dafarusd/keephaven-mcp" },
+  "type": "module",
+  "bin": { "keephaven-mcp": "dist/index.js" },
+  "files": ["dist/", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/index.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "npm run build && vitest run",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  },
+  "engines": { "node": ">=20" }
+}
