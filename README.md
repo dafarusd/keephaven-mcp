@@ -23,7 +23,7 @@ Works with MCP clients that run local servers, like Claude Desktop, Claude Code 
 - You add an agent in Keephaven's **Settings > Agents** and get a token, shown once. The box stores only a fingerprint of it.
 - Revoke cuts the agent off at once. Its files stay until you delete them.
 - Set a size limit per agent, or make one read-only.
-- If your Keephaven backs up to a second box, the agent's folder goes too. The backup box refuses every delete, so what the agent wrote survives a wiped main box.
+- If your Keephaven backs up to a second box, the agent's folder is part of that backup, and the backup box refuses every delete. That part isn't tested between two real boxes yet.
 
 ## Set it up
 
@@ -35,7 +35,7 @@ Works with MCP clients that run local servers, like Claude Desktop, Claude Code 
   "mcpServers": {
     "keephaven": {
       "command": "npx",
-      "args": ["-y", "@dafarusd/keephaven-mcp"],
+      "args": ["-y", "github:dafarusd/keephaven-mcp"],
       "env": {
         "KEEPHAVEN_URL": "http://keephaven-xxxx.local:8790",
         "KEEPHAVEN_TOKEN": "khm_..."
@@ -48,8 +48,10 @@ Works with MCP clients that run local servers, like Claude Desktop, Claude Code 
 For Claude Code:
 
 ```
-claude mcp add keephaven -e KEEPHAVEN_URL=http://keephaven-xxxx.local:8790 -e KEEPHAVEN_TOKEN=khm_... -- npx -y @dafarusd/keephaven-mcp
+claude mcp add keephaven -e KEEPHAVEN_URL=http://keephaven-xxxx.local:8790 -e KEEPHAVEN_TOKEN=khm_... -- npx -y github:dafarusd/keephaven-mcp
 ```
+
+It installs straight from GitHub, so the first start takes a minute while it builds. Needs Node 20 or newer.
 
 The machine running the agent has to reach the box: same home network, the Keephaven's own Wi-Fi, or your Tailscale tailnet when Remote access is on.
 

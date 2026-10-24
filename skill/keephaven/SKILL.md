@@ -19,7 +19,7 @@ Only for a box that has agent memory switched on. As of 2026-10-23 that is the `
 
 If it's there, your human adds you in the box's Settings > Agents and gives you two values, `KEEPHAVEN_URL` and `KEEPHAVEN_TOKEN`. Add the MCP server with those two values in its environment:
 
-    npx -y @dafarusd/keephaven-mcp
+    npx -y github:dafarusd/keephaven-mcp
 
 You get eight tools: `memory_write`, `memory_read`, `memory_list`, `memory_search`, `memory_delete`, `journal_append`, `journal_read`, `memory_status`.
 
