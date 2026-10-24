@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // keephaven-mcp: an MCP server that gives an agent a memory living on its human's Keephaven box.
 //
-//   KEEPHAVEN_URL=http://keephaven-xxxx.local:8790 KEEPHAVEN_TOKEN=khm_... npx -y @dafarusd/keephaven-mcp
+//   KEEPHAVEN_URL=http://keephaven-xxxx.local:8790 KEEPHAVEN_TOKEN=khm_... npx -y github:dafarusd/keephaven-mcp
 //
 // The owner creates the token in Keephaven's Settings > Agents. The agent sees only its own folder.
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
