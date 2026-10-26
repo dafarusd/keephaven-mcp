@@ -11,7 +11,7 @@ This skill does two things.
 
 ## 1. Use a Keephaven as your memory
 
-Only for a box that has agent memory switched on. As of 2026-10-23 that is the `agent-memory` branch: it is in no release image. It has run on one Pi 5 test box from a dev image; backup to a second box is untested. Check first:
+Only for a Keephaven Agent Memory box (released 2026-10-25, for a Pi 5 or a USB SSD on a Windows PC: https://keephaven.co/agent-memory). Home and Photos boxes don't have it. Check first:
 
     curl -s http://<box>:8790/v1/health
 
@@ -29,7 +29,7 @@ Habits that work:
 - Log decisions with `journal_append`. You can add to the journal, never change it.
 - Don't store your human's passwords or keys there.
 
-No box? The memory server is one Python file with no dependencies. From a checkout of the branch:
+No box? The memory server is one Python file with no dependencies. From a checkout of https://github.com/dafarusd/keephaven:
 
     python3 modules/agent-memory.py serve --data ./mem --bind 127.0.0.1 --dev-token <pick-one>
 
@@ -38,6 +38,8 @@ No box? The memory server is one Python file with no dependencies. From a checko
 Needs Linux with QEMU and OVMF, about 14 GB of disk and 4 GB of RAM. KVM makes it fast. The VM script downloads the Photos SSD image, checks it against the published checksum, and boots it: https://gist.github.com/dafarusd/7bcb1e9ac596de7dcd28316b5fddc4a8
 
 Read the script before you run it. It's about 50 lines.
+
+For memory with no box at all, a second script boots the Agent Memory SSD image the same way, with Settings → Agents on http://localhost:8888 and the memory API on http://localhost:8790: https://gist.github.com/dafarusd/43a6bfad80e7b4db4e9897133262aee8
 
 Then run the check in this folder against it:
 
