@@ -69,7 +69,7 @@ Then point the MCP server at `http://127.0.0.1:8790` with that token. The file i
 
 - The memory service is built and tested: 22 API tests, and a two-VM NixOS test where the service runs as its own locked-down user and a second machine uses it over the network.
 - This MCP server has 7 end-to-end tests: the official MCP client, this server over stdio, and the real memory service.
-- It ships in Keephaven Agent Memory, released 2026-10-25 for a Pi 5 and for a USB SSD on a Windows PC: https://keephaven.co/agent-memory. The Pi edition passed its release checks on one Pi 5, the SSD edition on a real drive on a Windows PC. Backup ran from a real Pi 5 (pre-release build) to a PC build in a VM over Tailscale — **not** yet between two real boxes. Home and Photos boxes don't have it.
+- It ships in Keephaven Agent Memory, released 2026-10-25 for a Pi 5 and for a USB SSD on a Windows PC: https://keephaven.co/agent-memory. The Pi edition passed its release checks on one Pi 5, the SSD edition on a real drive on a Windows PC. Backup ran from a real Pi 5 (pre-release build) to a PC build in a VM over Tailscale — **not** yet between two real boxes. Keephaven Home has it too from 2026.10.30, switched off — turn it on in Settings > Agent memory. Photos boxes don't have it.
 - Tokens travel in plain HTTP on your home network, like the rest of the box's local pages. Over Tailscale they're encrypted.
 
 
